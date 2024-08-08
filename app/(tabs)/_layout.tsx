@@ -3,7 +3,7 @@ import { Tabs, Stack } from 'expo-router';
 
 export default function TabLayout() {
     return (
-        <Tabs screenOptions={{ tabBarActiveTintColor: '#1C1C1C' }}>
+        <Tabs screenOptions={{ tabBarActiveTintColor: '#1C1C1C'}}>
             <Tabs.Screen
                 name="index"
                 options={{
@@ -13,25 +13,20 @@ export default function TabLayout() {
                 }}
             />
             <Tabs.Screen
+                name="newtransaction"
+                options={{
+                    title: 'New transaction',
+                    tabBarIcon: ({ color }) => <FontAwesome size={28} name="money" color={color} />,
+                    headerShown: false,
+                    
+                }}
+            />
+            <Tabs.Screen
                 name="about"
                 options={{
                     title: 'About',
                     tabBarIcon: ({ color }) => <FontAwesome size={28} name="info" color={color} />,
                     headerShown: false,
-                }}
-            />
-            <Tabs.Screen
-                name="adddebt"
-                options={{
-                    title: 'New transaction',
-                    href: null,
-                }}
-            />
-            <Tabs.Screen 
-                name="iowe"
-                options={{
-                    title: 'New transaction',
-                    href: null,
                 }}
             />
         </Tabs>

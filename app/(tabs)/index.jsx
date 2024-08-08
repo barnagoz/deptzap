@@ -20,18 +20,11 @@ export default function Index () {
                 <Text style={{color: "white"}}>Debt</Text>
                 <Text style={{fontSize:"35em", color: "white"}}>$2.00</Text>
             </View>
-            <View style={{flex: 1, flexDirection:"row", justifyContent:"space-between", alignItems:"flex-start", gap: 10, maxHeight: 45}}>
-                <Link href="/adddebt" asChild>
+                <Link href="/newtransaction" asChild>
                     <Pressable style={styles.button}>
-                        <Text style={styles.text}>Add debt</Text>
+                        <Text style={styles.text}>New transaction</Text>
                     </Pressable>
                 </Link>
-                <Link href="/iowe" asChild>
-                    <Pressable style={styles.button}>
-                        <Text style={styles.text}>I owe</Text>
-                    </Pressable>
-                </Link>
-            </View>
             <Text style={{fontSize: "25em", marginTop: 10, fontWeight:"600"}}>Recent transactions</Text>
             <View style={{backgroundColor: "#ff686b", padding: 20, width:"100%", borderRadius: 15, flex: 1, flexDirection:"row", maxHeight:90, justifyContent:"space-between", alignItems:"center" }}>
             <Entypo name="circle-with-minus" size={50} color="black" />
@@ -58,7 +51,7 @@ const styles = StyleSheet.create({
       paddingHorizontal: 32,
       borderRadius: 15,
       elevation: 3,
-      width: "50%",
+      width: "100%",
       backgroundColor: '#1C1C1C',
     },
     text: {
