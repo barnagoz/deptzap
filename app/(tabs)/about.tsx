@@ -7,7 +7,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 
 
 
-export default function Index () {
+export default function About () {
     return (
         <SafeAreaView
             style={{

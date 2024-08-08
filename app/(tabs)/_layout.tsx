@@ -1,5 +1,5 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Tabs } from 'expo-router';
+import { Tabs, Stack } from 'expo-router';
 
 export default function TabLayout() {
     return (
@@ -20,6 +20,24 @@ export default function TabLayout() {
                     headerShown: false,
                 }}
             />
+            <Tabs.Screen
+                name="adddebt"
+                options={{
+                    title: 'New transaction',
+                    href: null,
+                }}
+            />
+            <Tabs.Screen 
+                name="iowe"
+                options={{
+                    title: 'New transaction',
+                    href: null,
+                }}
+            />
         </Tabs>
     );
 }
+
+export const unstable_settings = {
+    initialRouteName: 'index',
+  };
