@@ -12,8 +12,8 @@ export default function Index () {
         <SafeAreaView
             style={{
                 flex: 1,
-                justifyContent: "start",
-                alignItems: "start",
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
                 padding: 15,
                 gap: 10
             }}
