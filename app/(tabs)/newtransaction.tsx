@@ -1,5 +1,5 @@
 import {SafeAreaView} from "react-native-safe-area-context";
-import {Text, View, Switch, TextInput} from "react-native";
+import {Text, View, Switch, TextInput, Pressable, Keyboard} from "react-native";
 import { useState } from 'react';
 
 export default function Adddebt () {
@@ -26,7 +26,7 @@ export default function Adddebt () {
             />
             <Text style={{fontSize: 20, alignSelf: "center", paddingLeft: 25, fontWeight: "bold"}}>I owe</Text>
         </View>
-        <View style={{flex: 1, alignItems: 'flex-start', justifyContent: 'flex-start', flexDirection: "row", gap: 5, alignSelf: "center", marginTop: 50}}>
+        <View style={{flex: 1, alignItems: 'flex-start', justifyContent: 'flex-start', flexDirection: "row", gap: 5, alignSelf: "center", marginTop: 50, maxHeight: 100}}>
         <TextInput
             style={{ height: 50, borderColor: 'gray', borderWidth: 3, width: 300, borderRadius: 10, padding: 10, fontSize: 20}}
             onChangeText={onChangeAmount}
@@ -37,7 +37,20 @@ export default function Adddebt () {
         />
         <Text style={{fontSize: 40, paddingLeft: 10}}>$</Text>
         </View>
-        
+        <View style={{flex: 1, alignItems: "flex-start", justifyContent: 'flex-start', flexDirection: "row", gap: 5, alignSelf: "center", maxHeight: 50}}>
+            <Pressable
+                onPress={() => Keyboard.dismiss()}
+                accessibilityLabel="Back"
+                style={{backgroundColor: "#1c1c1c", paddingHorizontal: 20, borderRadius: 10, padding: 10}}>
+                <Text style={{fontSize: 20, color: "white"}}>Back</Text>
+            </Pressable>
+            <Pressable
+                onPress={() => Keyboard.dismiss()} // TODO: Add submit function
+                accessibilityLabel="Submit"
+                style={{backgroundColor: "#1c1c1c", padding: 10, borderRadius: 10, paddingHorizontal: 15}}>
+                <Text style={{fontSize: 20, color: "white"}}>Submit</Text>
+            </Pressable>
+        </View>
     </SafeAreaView>
     );
 }
