@@ -13,7 +13,8 @@
       "backgroundColor": "#1C1C1C"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.barnagoz.deptzap"
     },
     "android": {
       "adaptiveIcon": {
@@ -31,6 +32,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "0a074dd5-19d6-4087-9910-b9f0280cc18c"
+      }
+    },
+    "owner": "e5vos.technikusi.szervezet"
   }
 }
