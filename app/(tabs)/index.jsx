@@ -120,8 +120,8 @@ export default function Index ({navigation}) {
                         justifyContent: "space-between",
                         alignItems: "center"
                     }}>
-                        <Entypo name={dept.amount > 0 ? "circle-with-minus" : "circle-with-plus"} size={40}
-                                color="black"/>
+                        <Entypo name={dept.amount > 0 ? "arrow-bold-left" : "arrow-bold-right"} size={40} color="black"/>
+                        {/* <Entypo name={dept.amount > 0 ? "circle-with-minus" : "circle-with-plus"} size={40} color="black"/> */}
                         <Text style={{fontSize: "20em"}}>{dept.name}</Text>
                         <Text style={{
                             fontSize: "30em", color: "black"

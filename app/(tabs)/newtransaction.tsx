@@ -2,6 +2,7 @@ import {SafeAreaView} from "react-native-safe-area-context";
 import {Pressable, Switch, Text, TextInput, View} from "react-native";
 import {useState} from 'react';
 import {addDept} from "@/lib/depts";
+import { router } from "expo-router";
 
 export default function Adddebt() {
     const [isEnabled, setIsEnabled] = useState(false);
@@ -12,7 +13,13 @@ export default function Adddebt() {
 
     async function submit() {
         await addDept(name, isEnabled ? amount : -amount, currency, desc, new Date().toISOString());
+        onChangeAmount('');
+        onChangeName('');
+        // onChangeCurrency('');
+        onChangeDesc('');
         alert("Transaction saved!")
+        router.replace('/');
+
     }
 
     return (
