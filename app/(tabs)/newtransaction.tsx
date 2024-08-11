@@ -153,7 +153,6 @@ export default function Adddebt() {
                     value={desc}
                     placeholder="Short description"
                     placeholderTextColor="gray"
-                    multiline={true}
                 />
             </View>
             <View style={{
