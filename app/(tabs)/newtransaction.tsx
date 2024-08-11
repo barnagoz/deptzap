@@ -135,8 +135,9 @@ export default function Adddebt() {
                 flexDirection: "row",
                 gap: 5,
                 alignSelf: "center",
-                maxHeight: 50,
-                marginBottom: 15
+                height: 50,
+                marginBottom: 15,
+                maxHeight: 100
             }}>
                 <TextInput
                     style={{
@@ -152,6 +153,7 @@ export default function Adddebt() {
                     value={desc}
                     placeholder="Short description"
                     placeholderTextColor="gray"
+                    multiline={true}
                 />
             </View>
             <View style={{
