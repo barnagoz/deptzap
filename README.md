@@ -13,10 +13,12 @@ You can download it here: TODO
 https://youtu.be/GBhhxPAwMyY
 
 ## Screenshots
-<img src="readme_photos/IMG_1130.PNG" alt="screenshot1" width="150"/>
-<img src="readme_photos/IMG_1131.PNG" alt="screenshot1" width="150"/>
-<img src="readme_photos/IMG_1132.PNG" alt="screenshot1" width="150"/>
-<img src="readme_photos/IMG_1133.PNG" alt="screenshot1" width="150"/>
+<p float="left">
+   <img src="readme_photos/IMG_1130.PNG" alt="screenshot1" width="150"/>
+   <img src="readme_photos/IMG_1131.PNG" alt="screenshot1" width="150"/>
+   <img src="readme_photos/IMG_1132.PNG" alt="screenshot1" width="150"/>
+   <img src="readme_photos/IMG_1133.PNG" alt="screenshot1" width="150"/>
+</p>
 
 
 ## Special thanks
