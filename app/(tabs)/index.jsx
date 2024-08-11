@@ -40,7 +40,7 @@ export default function Index ({navigation}) {
 
                 <Text style={{
                     marginBottom: 15, textAlign: 'center', width: '100%', fontSize: 18.5, fontWeight: 'bold',
-                }}>{selectedDept.amount > 0 ? `You owe ${selectedDept.name}` : `${selectedDept.name} owes you`}</Text>
+                }}>{selectedDept.amount > 0 ? `You owe ${selectedDept.name ? selectedDept.name : `someone`}` : `${selectedDept.name ? selectedDept.name : `Someone`} owes you`}</Text>
                 <Text style={{
                     fontSize: 60,
                     fontWeight: 'bold',
@@ -51,10 +51,10 @@ export default function Index ({navigation}) {
                 }}>
                     {Math.abs(selectedDept.amount)} {selectedDept.currency}
                 </Text>
-                <Text style={{fontSize: 18, fontWeight: 'bold', marginBottom: 5,}}>Description</Text>
-                <Text style={{fontSize: 20, marginBottom: 20,}}>{selectedDept.description}</Text>
+                {selectedDept.description ? <Text style={{fontSize: 18, fontWeight: 'bold', marginBottom: 5,}}>Description</Text> : null}
+                {selectedDept.description ? <Text style={{fontSize: 20, marginBottom: 20}}>{selectedDept.description}</Text> : <Text style={{fontSize: 20, color: 'gray', marginBottom: 20}}>No description</Text>}
                 <Text style={{fontSize: 18, fontWeight: 'bold', marginBottom: 5,}}>Date</Text>
-                <Text style={{fontSize: 20, marginBottom: 20,}}>{new Date(selectedDept.date).toLocaleString()}</Text>
+                <Text style={{fontSize: 20, marginBottom: 20}}>{new Date(selectedDept.date).toLocaleString()}</Text>
                 <Pressable
                     onPress={() => Share.share({
                         message: getShareText(selectedDept),
@@ -97,7 +97,7 @@ export default function Index ({navigation}) {
         <ScrollView style={{height: "105%"}} contentContainerStyle={{
             justifyContent: "start", alignItems: "start", padding: 15, gap: 10, flexGrow: 1, paddingBottom: 150
         }} refreshControl={(<RefreshControl refreshing={refreshing} onRefresh={getData} title={"Updating..."}/>)}>
-            <Text style={{fontSize: "30em", fontWeight: "bold"}}>Hoowdy fellow DeptZapper!</Text>
+            <Text style={{fontSize: "30em", fontWeight: "bold"}}>Howdy fellow DeptZapper!</Text>
             <Link href="/newtransaction" asChild>
                 <Pressable style={styles.button}>
                     <Text style={styles.text}>New transaction</Text>
