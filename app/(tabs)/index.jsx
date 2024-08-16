@@ -97,13 +97,13 @@ export default function Index ({navigation}) {
         <ScrollView style={{height: "105%"}} contentContainerStyle={{
             justifyContent: "start", alignItems: "start", padding: 15, gap: 10, flexGrow: 1, paddingBottom: 150
         }} refreshControl={(<RefreshControl refreshing={refreshing} onRefresh={getData} title={"Updating..."}/>)}>
-            <Text style={{fontSize: "30em", fontWeight: "bold"}}>Howdy fellow DeptZapper!</Text>
+            <Text style={{fontSize: 30, fontWeight: "bold"}}>Howdy fellow DeptZapper!</Text>
             <Link href="/newtransaction" asChild>
                 <Pressable style={styles.button}>
                     <Text style={styles.text}>New transaction</Text>
                 </Pressable>
             </Link>
-            <Text style={{fontSize: "25em", marginTop: 10, fontWeight: "600"}}>Recent transactions</Text>
+            <Text style={{fontSize: 25, marginTop: 10, fontWeight: "600"}}>Recent transactions</Text>
             {depts.map((dept, index) => (
                 <Pressable onPress={() => {
                     setSelectedDept(dept);
@@ -122,14 +122,14 @@ export default function Index ({navigation}) {
                     }}>
                         <Entypo name={dept.amount > 0 ? "arrow-bold-left" : "arrow-bold-right"} size={40} color="black"/>
                         {/* <Entypo name={dept.amount > 0 ? "circle-with-minus" : "circle-with-plus"} size={40} color="black"/> */}
-                        <Text style={{fontSize: "20em"}}>{dept.name}</Text>
+                        <Text style={{fontSize: 20}}>{dept.name}</Text>
                         <Text style={{
-                            fontSize: "30em", color: "black"
+                            fontSize: 30, color: "black"
                         }}>{Math.abs(dept.amount)} {dept.currency}</Text>
                     </View>
                 </Pressable>))}
             {depts.length === 0 &&
-                <Text style={{fontSize: "16em", color: 'gray', marginTop: 10, textAlign: "center", width: '100%'}}>Hmm...
+                <Text style={{fontSize: 16, color: 'gray', marginTop: 10, textAlign: "center", width: '100%'}}>Hmm...
                     It looks like there are no transactions here..</Text>}
         </ScrollView>
     </SafeAreaView>);
