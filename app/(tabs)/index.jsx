@@ -121,11 +121,13 @@ export default function Index ({navigation}) {
                         alignItems: "center"
                     }}>
                         <Entypo name={dept.amount > 0 ? "arrow-bold-left" : "arrow-bold-right"} size={40} color="black"/>
+                        
                         {/* <Entypo name={dept.amount > 0 ? "circle-with-minus" : "circle-with-plus"} size={40} color="black"/> */}
+                        
                         <Text style={{fontSize: 20}}>{dept.name}</Text>
-                        <Text style={{
+                        {dept.name.length > 15 ? null :                         <Text style={{
                             fontSize: 30, color: "black"
-                        }}>{Math.abs(dept.amount)} {dept.currency}</Text>
+                        }}>{Math.abs(dept.amount)} {dept.currency}</Text>}
                     </View>
                 </Pressable>))}
             {depts.length === 0 &&
