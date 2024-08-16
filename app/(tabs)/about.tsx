@@ -29,7 +29,7 @@ export default function About() {
                 borderRadius: 15,
                 color: "white",
                 overflow: 'hidden'
-            }}>Debtzap allows you to track your debts and write down others'.</Text>
+            }}>DebtZap allows you to track your debts and write down others'.</Text>
             <Text style={{fontSize: 20, fontWeight: "bold"}}>You can find us on GitHub.</Text>
             <View style={{flex: 1, flexDirection:"row", maxHeight: 33, gap: 5}}>
                 <A style={{
@@ -59,8 +59,7 @@ export default function About() {
                 borderRadius: 15,
                 color: "white",
                 overflow: 'hidden'
-            }}><Text style={{fontWeight: "bold"}}>Tip:</Text> If you press one of the items in the transaction history,
-                you can share a reminder with your friend.</Text>
+            }}><Text style={{fontWeight: "bold"}}>Tip:</Text> You can also use items as currency, for example: a drink</Text>
             <Text style={{position: "absolute", bottom: 20, fontSize: 20, alignSelf: "center"}}>Thanks for using our
                 application!</Text>
         </SafeAreaView>
