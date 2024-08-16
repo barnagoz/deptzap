@@ -6,6 +6,7 @@ import {deleteDept, getDeptList} from "../../lib/depts";
 import {useCallback, useState} from "react";
 import getShareText from "@/lib/share";
 import {useFocusEffect} from "@react-navigation/native";
+import * as Linking from 'expo-linking';
 
 
 export default function Index ({navigation}) {
@@ -13,7 +14,14 @@ export default function Index ({navigation}) {
     const [refreshing, setRefreshing] = useState(false);
     const [modalVisible, setModalVisible] = useState(false);
     const [selectedDept, setSelectedDept] = useState({});
+    const url = Linking.useURL();
 
+    if (url) {
+        const { hostname, path, queryParams } = Linking.parse(url);
+
+        console.log(`Linked to app with hostname: ${hostname}, path: ${path} and data: ${JSON.stringify(queryParams)}`)
+    
+    }
     async function getData () {
         setRefreshing(true)
         const depts = await getDeptList();
@@ -125,9 +133,7 @@ export default function Index ({navigation}) {
                         {/* <Entypo name={dept.amount > 0 ? "circle-with-minus" : "circle-with-plus"} size={40} color="black"/> */}
                         
                         <Text style={{fontSize: 20}}>{dept.name}</Text>
-                        {dept.name.length > 15 ? null :                         <Text style={{
-                            fontSize: 30, color: "black"
-                        }}>{Math.abs(dept.amount)} {dept.currency}</Text>}
+                        {dept.name.length > 15 ? null : <Text style={{fontSize: 30, color: "black"}}>{Math.abs(dept.amount)} {dept.currency}</Text>}
                     </View>
                 </Pressable>))}
             {depts.length === 0 &&
