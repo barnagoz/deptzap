@@ -5,17 +5,19 @@ import {addDept} from "@/lib/depts";
 import { router } from "expo-router";
 
 export default function Adddebt() {
+    // States for the form
     const [isEnabled, setIsEnabled] = useState(false);
     const [amount, onChangeAmount] = useState('');
     const [name, onChangeName] = useState('');
     const [currency, onChangeCurrency] = useState('');
     const [desc, onChangeDesc] = useState('');
 
+    // Function to submit the form
     async function submit() {
         await addDept(name, isEnabled ? amount : -amount, currency, desc, new Date().toISOString());
         onChangeAmount('');
         onChangeName('');
-        // onChangeCurrency('');
+        // onChangeCurrency(''); - removed because a user might want to use the same currency again
         onChangeDesc('');
         alert("Transaction saved!")
         router.replace('/');
@@ -85,6 +87,7 @@ export default function Adddebt() {
                     placeholderTextColor="gray"
                 />
             </View>
+            {/* Cool switch, which changes color based on state */}
             <Text style={{
                 fontSize: 22.5,
                 alignSelf: "flex-start"
@@ -98,6 +101,7 @@ export default function Adddebt() {
                 maxHeight: 50,
                 marginBottom: 15
             }}>
+                {/* Text inputs for the new transaction */}
                 <TextInput
                     style={{
                         borderColor: 'gray',
@@ -171,6 +175,7 @@ export default function Adddebt() {
                 alignSelf: "center",
                 maxHeight: 50
             }}>
+                {/* Submit button, saves the new transaction to on-device storage */}
                 <Pressable
                     onPress={() => submit()}
                     accessibilityLabel="Submit"

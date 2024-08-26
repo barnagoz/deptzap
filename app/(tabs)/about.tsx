@@ -6,6 +6,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 
 export default function About() {
     return (
+        // About page
         <SafeAreaView
             style={{
                 flex: 1,
@@ -16,6 +17,7 @@ export default function About() {
             }}
         >
             <Text style={{fontSize: 30, fontWeight: "bold"}}>About</Text>
+            {/* Introduction to our application */}
             <View style={{borderStartWidth: 3, borderStartColor: "black",}}>
                 <Text style={{fontSize: 20, fontWeight: "bold", padding: 10}}>This app was made by 2 highschool
                     students, who had enough of remembering debts.</Text>
@@ -30,6 +32,7 @@ export default function About() {
                 color: "white",
                 overflow: 'hidden'
             }}>DebtZap allows you to track your debts and write down others'.</Text>
+            {/* Contacts, links pointing to our github profiles */}
             <Text style={{fontSize: 20, fontWeight: "bold"}}>You can find us on GitHub.</Text>
             <View style={{flex: 1, flexDirection:"row", maxHeight: 33, gap: 5}}>
                 <A style={{
@@ -50,6 +53,7 @@ export default function About() {
                     overflow: "hidden"
                 }} href="https://github.com/abelanagy"><AntDesign name="github" size={24} color="white"/> Ábel Nagy</A>
             </View>
+            {/* An extra tip to help new users */}
             <Text style={{
                 fontSize: 20,
                 fontWeight: "400",

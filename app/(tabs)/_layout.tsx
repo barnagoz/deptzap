@@ -4,6 +4,7 @@ import { Tabs, Stack } from 'expo-router';
 export default function TabLayout() {
     return (
         <Tabs screenOptions={{ tabBarActiveTintColor: '#1C1C1C'}}>
+            {/* Home page, this is the first page the user sees when opening the app */}
             <Tabs.Screen
                 name="index"
                 options={{
@@ -12,6 +13,7 @@ export default function TabLayout() {
                     headerShown: false,
                 }}
             />
+            {/* On this page you can add new transactions to DeptZap */}
             <Tabs.Screen
                 name="newtransaction"
                 options={{
@@ -21,6 +23,7 @@ export default function TabLayout() {
                     
                 }}
             />
+            {/* About page, self-explanatory */}
             <Tabs.Screen
                 name="about"
                 options={{

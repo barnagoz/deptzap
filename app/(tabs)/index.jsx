@@ -31,9 +31,36 @@ export default function Index ({navigation}) {
 
     useFocusEffect(useCallback(() => {
         getData()
+        changeTextValue()
     }, [navigation]));
 
+    const [textValue, setTextValue] = useState('Howdy, fellow DeptZapper!');
+
+    const welcomeMessages = [
+        "Welcome to DeptZap! Let's settle those debts, one zap at a time!",
+        "Howdy, fellow DeptZapper! Ready to track your debts like a pro?",
+        "Keep calm and zap those debts away! DeptZap at your service.",
+        "DeptZap: Because every penny counts. Let’s get started!",
+        "Who owes you? DeptZap knows! Dive into debt tracking today!",
+        "Welcome to the ultimate debt tracker! Let DeptZap handle the numbers.",
+        "Your personal debt tracker awaits! Let’s make managing money simple with DeptZap.",
+        "Say goodbye to IOUs chaos! DeptZap is here to keep your finances in check.",
+        "DeptZap: The smarter way to keep tabs on who owes what!",
+        "Welcome to DeptZap! Your journey to hassle-free debt management starts now.",
+        "DeptZap: Track it, manage it, zap it! Let's clean up those debts.",
+        "Howdy, fellow DeptZapper! Let’s make debt tracking a breeze!"
+      ];
+    //   Thanks gpt-4o :)
+      
+
+    const changeTextValue = () => {
+        const len = welcomeMessages.length;
+        setTextValue(welcomeMessages[Math.floor(Math.random() * len)])
+    }
+  
     return (<SafeAreaView style={{heigth: "100%"}}>
+
+        {/* Modal that pops up when pressing a specific transaction */}
         <Modal
             animationType="slide"
             visible={modalVisible}
@@ -102,15 +129,21 @@ export default function Index ({navigation}) {
                 </Pressable>
             </View>
         </Modal>
+
+        {/* The base of the application */}
         <ScrollView style={{height: "105%"}} contentContainerStyle={{
             justifyContent: "start", alignItems: "start", padding: 15, gap: 10, flexGrow: 1, paddingBottom: 150
         }} refreshControl={(<RefreshControl refreshing={refreshing} onRefresh={getData} title={"Updating..."}/>)}>
-            <Text style={{fontSize: 30, fontWeight: "bold"}}>Howdy fellow DeptZapper!</Text>
+            <Text style={{fontSize: 30, fontWeight: "bold"}}>{textValue}</Text>
+
+            {/* Pressing the new transaction button will take you to the new transaction page */}
             <Link href="/newtransaction" asChild>
                 <Pressable style={styles.button}>
                     <Text style={styles.text}>New transaction</Text>
                 </Pressable>
             </Link>
+
+            {/* Recent transactions, if none a polite message pops up */}
             <Text style={{fontSize: 25, marginTop: 10, fontWeight: "600"}}>Recent transactions</Text>
             {depts.map((dept, index) => (
                 <Pressable onPress={() => {
@@ -143,6 +176,7 @@ export default function Index ({navigation}) {
     </SafeAreaView>);
 }
 
+// Stylesheets for the new transaction button
 const styles = StyleSheet.create({
     button: {
         alignItems: 'center',

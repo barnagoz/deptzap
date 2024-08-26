@@ -5,6 +5,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 export default function NotFoundScreen() {
+  // Extra screen if something goes wrong
   return (
     <>
       <Stack.Screen options={{ title: 'Oops!' }} />
