@@ -15,10 +15,16 @@
       }
     },
     "production": {
-      "autoIncrement": true
+      "autoIncrement": false
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "ios": {
+        "appleId": "tsz.fejlesztes@e5vos.hu",
+        "ascAppId": "6740210208",
+        "appleTeamId": "42K3JL26J9"
+      }
+    }
   }
 }

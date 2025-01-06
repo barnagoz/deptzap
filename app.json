@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "DeptZap",
+    "name": "deptzap",
     "slug": "deptzap",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -13,7 +13,7 @@
       "backgroundColor": "#1C1C1C"
     },
     "ios": {
-      "supportsTablet": true,
+      "supportsTablet": false,
       "bundleIdentifier": "com.e5vos.technikusi.szervezet.deptzap"
     },
     "android": {
