@@ -14,7 +14,8 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.e5vos.technikusi.szervezet.deptzap"
+      "bundleIdentifier": "com.e5vos.technikusi.szervezet.deptzap",
+      "buildNumber": "3"
     },
     "android": {
       "adaptiveIcon": {
